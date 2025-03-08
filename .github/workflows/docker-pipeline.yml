@@ -7,11 +7,14 @@ jobs:
       - name: Print Your Name
         run: echo "Hello World - Vettrivel"
 
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Docker Build
+      - name: Set up Docker
+        run: sudo apt-get update && sudo apt-get install -y docker.io
+
+      - name: Build Docker Image
         run: docker build -t vettri12/ml-model-22IT053 .
 
-      - name: Docker Images
+      - name: List Docker Images
         run: docker images
