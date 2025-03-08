@@ -1,11 +1,11 @@
 name: hello-world-vettrivel
 on: push
 jobs:
-  docker-job:
+  my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Your Register Number
-        run: echo "Hello-World - 22IT053"
+      - name: Print Your Name
+        run: echo "Hello World - Vettrivel"
 
       - name: Checkout
         uses: actions/checkout@v4
