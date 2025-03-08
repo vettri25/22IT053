@@ -1,0 +1,11 @@
+name: hello-world-nandhakumarbm
+on: push
+jobs:
+  docker-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Your Register Number
+        run: echo "Hello-World - 22IT053"
+
+      - name: Checkout
+        uses: actions/checkout@v4
