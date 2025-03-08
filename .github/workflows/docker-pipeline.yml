@@ -11,7 +11,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Docker
-        run: sudo apt-get update && sudo apt-get install -y docker.io
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+          sudo systemctl start docker
+          sudo systemctl enable docker
+          sudo usermod -aG docker $USER
 
       - name: Build Docker Image
         run: docker build -t vettri12/ml-model-22IT053 .
